@@ -3,7 +3,7 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'guard/haml2erb/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'guard-haml2erb'
+  s.name        = 'ouvrages-guard-haml2erb'
   s.version     = Guard::Haml2erbVersion::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Ouvrages']
