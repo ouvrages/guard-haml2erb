@@ -11,7 +11,7 @@ module Guard
       super
     end
 
-    # Get the file path to output the html based on the file being
+    # Get the file path to output the erb based on the file being
     # built.  The output path is relative to where guard is being run.
     #
     # @param file [String] path to file being built
@@ -21,7 +21,7 @@ module Guard
       file_dir = File.dirname(file)
       file_name = File.basename(file).split('.')[0..-2].join('.')
 
-      file_name = "#{file_name}.erb" if file_name.match("\.erb").nil?
+      file_name = "#{file_name}.erb" if file_name.match(/\.erb/).nil?
 
       file_dir = file_dir.gsub(Regexp.new("#{@options[:input]}(\/){0,1}"), '') if @options[:input]
       file_dir = File.join(@options[:output], file_dir) if @options[:output]
