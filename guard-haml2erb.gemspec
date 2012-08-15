@@ -1,17 +1,25 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/guard/haml2erb/version', __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
+require 'guard/haml2erb/version'
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Michael Witrant"]
-  gem.email         = ["michael@ouvrages-web.fr"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+Gem::Specification.new do |s|
+  s.name        = 'guard-haml2erb'
+  s.version     = Guard::Haml2erbVersion::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ['Ouvrages']
+  s.email       = ['contact@ouvrages-web.fr']
+  s.homepage    = ''
+  s.summary     = %q{Guard gem for haml2erb}
+  s.description = %q{Compiles file.erb.haml into file.erb}
 
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "guard-haml2erb"
-  gem.require_paths = ["lib"]
-  gem.version       = Guard::Haml2erb::VERSION
+  s.rubyforge_project = 'guard-haml2erb'
+
+  s.add_dependency('guard', '>= 1.1')
+  s.add_dependency('haml2erb')
+
+  s.add_development_dependency('rspec')
+
+  s.files         = Dir.glob('{lib}/**/*') + %w[LICENSE README.md Gemfile]
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.require_paths = ['lib']
 end

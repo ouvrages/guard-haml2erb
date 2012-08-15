@@ -1,5 +1,5 @@
 module Guard
-  module Haml2erb
+  module Haml2erbVersion
     VERSION = "0.0.1"
   end
 end
