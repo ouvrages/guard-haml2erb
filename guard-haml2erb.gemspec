@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'guard-haml2erb'
 
   s.add_dependency('guard', '>= 1.1')
-  s.add_dependency('haml2erb')
+  s.add_dependency('ouvrages-haml2erb', '>= 0.3')
 
   s.add_development_dependency('rspec')
 
